@@ -1,0 +1,30 @@
+{
+  "name": "wvu-utilities-variables",
+  "version": "1.0.0",
+  "authors": [
+    "Steven Spriggs <steven.spriggs@mail.wvu.edu>",
+    "Adam Glenn <adam.glenn@mail.wvu.edu>",
+    "Adam Johnson <adam.johnson@mail.wvu.edu>",
+    "Dustin Mazon <dustin.mazon@mail.wvu.edu>"
+  ],
+  "keywords": [
+    "wvu",
+    "patterns"
+  ],
+  "description": "WVU Pattern Library -- Utility Variables",
+  "license": "MIT",
+  "main": [
+    "src/scss/_wvu-variables-mediaqueries.scss"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "build",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "neat" : "1.7.2"
+  }
+}

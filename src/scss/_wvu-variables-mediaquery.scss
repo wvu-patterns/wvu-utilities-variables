@@ -1,0 +1,15 @@
+// WVU Breakpoints
+//==================================================
+
+// Calulate Breakpoints in ems based on the WVU base font size
+$wvu-bp-micro: em(340px, $wvu-base-font-size) !default;
+$wvu-bp-mini: em(450px, $wvu-base-font-size) !default;
+$wvu-bp-small: em(570px, $wvu-base-font-size) !default;
+$wvu-bp-medium: em(768px, $wvu-base-font-size) !default;
+$wvu-bp-large: em(960px, $wvu-base-font-size) !default;
+$wvu-bp-xlarge: em(1200px, $wvu-base-font-size) !default;
+$wvu-bp-jumbo: em(1720px, $wvu-base-font-size) !default;
+
+// TODO: namespace this to wvu-
+// Responsive Navigation Breakpoint
+$rwd-nav-bp: $wvu-bp-medium !default;

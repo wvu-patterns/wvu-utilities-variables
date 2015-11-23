@@ -1,0 +1,49 @@
+{
+  "name": "wvu-utilities-variables",
+  "homepage": "https://github.com/wvu-patterns/wvu-utilities-variables",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wvu-patterns/wvu-utilities-variables.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wvu-patterns/wvu-utilities-variables/issues"
+  },
+  "author": "Steven Spriggs <steven.spriggs@mail.wvu.edu>",
+  "contributors": [
+    {
+      "name": "Adam Glenn",
+      "email": "adam.glenn@mail.wvu.edu"
+    },
+    {
+      "name": "Adam Johnson",
+      "email": "adam.johnson@mail.wvu.edu"
+    },
+    {
+      "name": "Dustin Mazon",
+      "email": "dustin.mazon@mail.wvu.edu"
+    }
+  ],
+  "keywords": [
+    "wvu",
+    "patterns"
+  ],
+  "description": "WVU Pattern Library - Utility Variables",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp ci"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-compile-handlebars": "^0.5.0",
+    "gulp-extend": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-scss-lint": "^0.3.8",
+    "run-sequence": "^1.1.4"
+  }
+}

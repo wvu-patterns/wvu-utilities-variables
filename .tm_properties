@@ -1,0 +1,7 @@
+include="{$include,.git}"
+include="{$include,.gitkeep}"
+include="{$include,.bowerrc}"
+include="{$include,.travis.yml}"
+include="{$include,.ruby-version}"
+include="{$include,.ruby-gemset}"
+include="{$include,.scss-lint.yml}"
