@@ -1,8 +1,15 @@
-// Border Box
-// When set to true, it sets the box-sizing property
-// of all elements to border-box.
+// Default Box sizing
 // =================================================
 $wvu-border-box-sizing: true !default;
 
-// Default base font size
+// Default Base font size
+// =================================================
 $wvu-base-font-size: 16px !default;
+
+// Default z-index
+// =================================================
+$wvu-base-z-index: 0 !default;
+
+// Default border-radius
+// =================================================
+$wvu-base-border-radius: 3px !default;
