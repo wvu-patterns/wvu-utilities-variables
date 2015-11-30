@@ -8,8 +8,10 @@ $wvu-base-font-size: 16px !default;
 
 // Default z-index
 // =================================================
+// TODO: remove this if not needed
 $wvu-base-z-index: 0 !default;
 
-// Default border-radius
+// Default Border Variables
 // =================================================
 $wvu-base-border-radius: 3px !default;
+$wvu-base-border: 1px solid $wvu-base-border-color !default;
