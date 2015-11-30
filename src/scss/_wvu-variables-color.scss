@@ -30,6 +30,7 @@ $pms-115-c: #FDDA24;
 
 
 // Color Aliases
+//==================================================
 $wvu-neutral-dark-grey: $pms-432-c;
 $wvu-neutral-light-grey: $pms-429-c;
 $wvu-neutral-warm-dark-grey: $pms-warm-gray-11;
@@ -51,6 +52,31 @@ $wvu-accent-yellow: $pms-115-c;
 
 
 // Generic Grey Tones
+//==================================================
 $wvu-light-grey: #cccccc;
 $wvu-lighter-grey: #dddddd;
 $wvu-lightest-grey: #eeeeee;
+
+
+// Font Color Defaults
+//==================================================
+
+$wvu-base-font-color: $wvu-black !default;
+$wvu-base-accent-color: $pms-300-c !default;
+
+// Link Color Defaults
+//==================================================
+
+$wvu-base-link-color: $wvu-base-accent-color  !default;
+$wvu-base-link-hover-color: $pms-166-c !default;
+$wvu-base-link-visited-color: $pms-286-c !default;
+
+// Border Color Default
+//==================================================
+
+$wvu-base-border-color: $wvu-light-grey !default;
+
+// Shadow Color Default
+//==================================================
+
+$wvu-base-shadow-color: rgba($wvu-black,0.06)
