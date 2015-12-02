@@ -20,12 +20,28 @@
       <div class="colors">
       {{#wvu_variables.colors}}
         <div class="color {{.}}">
+          <div class="color__swatches">
           {{#../wvu_variables.colors_dup}}
             <div class="color__swatch-{{.}}"></div>
           {{/../wvu_variables.colors_dup}}
+          </div>
+          <div class="color__text">
+          {{#../wvu_variables.colors_dup}}
+            <p class="color__text-{{.}}">{{.}}</p>
+          {{/../wvu_variables.colors_dup}}
+          </div>
           <div class="color__name">${{.}}</div>
         </div>
       {{/wvu_variables.colors}}
+      </div>
+
+      <h2>Grey Tones</h2>
+      <div class="grey_tones">
+      {{#wvu_variables.grey_tones}}
+        <div class="grey_tone {{.}}">
+          <div class="grey_tone">${{.}}</div>
+        </div>
+      {{/wvu_variables.grey_tones}}
       </div>
 
       <h2> Image Tests </h2>

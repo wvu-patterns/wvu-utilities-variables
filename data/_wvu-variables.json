@@ -20,10 +20,14 @@
       "pms-5625-c",
       "pms-558-c",
       "pms-180-c",
-      "pms-166-c",
+      "pms-166-c"
+    ],
+    "grey_tones": [
       "wvu-light-grey",
       "wvu-lighter-grey",
-      "wvu-lightest-grey",
+      "wvu-lightest-grey"
+    ],
+    "others": [
       "wvu-base-font-color",
       "wvu-base-accent-color",
       "wvu-base-link-color",

@@ -21,14 +21,14 @@
 {{#wvu_variables.colors}}
 .{{.}} {
   @include font-color-check(${{{.}}});
-  @include span-columns(3);
-  @include omega(4n);
+  @include span-columns(4);
+  @include omega(3n);
   background: ${{.}};
-  padding: 40px;
+  padding: 20px;
   margin-bottom: $gutter;
 
   &:after {
-    content: "#{ie-hex-str(${{{.}}})}";
+    content: "##{str-slice(ie-hex-str(${{{.}}}), 4)}";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -38,14 +38,41 @@
 }
 {{/wvu_variables.colors}}
 
+.color__swatches {
+  @include clearfix();
+  float: left;
+  width: 40%;
+  padding-bottom: 15px;
+}
+
 {{#wvu_variables.colors}}
 .color__swatch-{{.}} {
   @include font-color-check(${{{.}}});
   background: ${{.}};
   float: left;
-  height: 20px;
-  width: 20px;
-  margin: 5px;
+  height: 15px;
+  width: 15px;
+  margin: 3px;
+}
+{{/wvu_variables.colors}}
+
+.color__text {
+  columns: 80px 2;
+  column-gap: 1em;
+  float: right;
+  font-size: 12px;
+  padding-bottom: 15px;
+  width: 60%;
+
+  p {
+    margin: 0;
+  }
+}
+
+{{#wvu_variables.colors}}
+.color__text-{{.}} {
+  @include font-color-check(${{{.}}});
+  color: ${{.}};
 }
 {{/wvu_variables.colors}}
 
@@ -55,6 +82,34 @@
   position: absolute;
   margin: 5px;
 }
+
+.grey_tones {
+  @include outer-container();
+}
+
+.grey_tone {
+  position: relative;
+}
+
+{{#wvu_variables.grey_tones}}
+.{{.}} {
+  @include font-color-check(${{{.}}});
+  @include span-columns(4);
+  @include omega(3n);
+  background: ${{.}};
+  padding: 20px;
+  margin-bottom: $gutter;
+
+  &:after {
+    content: "##{str-slice(ie-hex-str(${{{.}}}), 4)}";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 11px;
+    margin: 5px;
+  }
+}
+{{/wvu_variables.grey_tones}}
 
 .images {
   @include outer-container();
