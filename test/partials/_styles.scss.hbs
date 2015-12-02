@@ -48,7 +48,13 @@
 }
 
 .dark-background {
-  background-color: $wvu-black;
+  background-color:$wvu-black;
+  background-image: linear-gradient(rgba($wvu-white,0.1) 2px, transparent 2px),
+  linear-gradient(90deg, rgba($wvu-white,0.1) 2px, transparent 2px),
+  linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size:50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 
   .image__name {
     color: $wvu-white;
