@@ -13,25 +13,28 @@
     </style>
   </head>
   <body>
-    <h1> WVU Variable Tests </h1>
+    <div class="container">
+      <h1> WVU Variable Tests </h1>
 
-    <h2> Color Tests </h2>
-    <div class="colors">
-    {{#wvu_variables.colors}}
-      <div class="color {{.}}">${{.}}</div>
-    {{/wvu_variables.colors}}
-    </div>
-
-    <h2> Image Tests </h2>
-    <div class="images">
-    {{#wvu_variables.images}}
-      <div class="image {{#darkBackground}}dark-background{{/darkBackground}}">
-        <div class="image__name">
-          {{name}}
+      <h2> Color Tests </h2>
+      <div class="colors">
+      {{#wvu_variables.colors}}
+        <div class="color {{.}}">
+          {{#../wvu_variables.colors_dup}}
+            <div class="color__swatch-{{.}}"></div>
+          {{/../wvu_variables.colors_dup}}
+          <div class="color__name">${{.}}</div>
         </div>
-        <img src="{{url}}" />
+      {{/wvu_variables.colors}}
       </div>
-    {{/wvu_variables.images}}
+
+      <h2> Image Tests </h2>
+      <div class="images">
+      {{#wvu_variables.images}}
+        <h3>${{name}}</h3>
+        <div class="image {{name}}"></div>
+      {{/wvu_variables.images}}
+    </div>
     </div>
   </body>
 </html>

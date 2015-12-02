@@ -6,6 +6,10 @@
   }
 }
 
+.container {
+  @include outer-container();
+}
+
 .colors {
   @include outer-container();
 }
@@ -20,7 +24,8 @@
   @include span-columns(3);
   @include omega(4n);
   background: ${{.}};
-  padding: 20px;
+  padding: 40px;
+  margin-bottom: $gutter;
 
   &:after {
     content: "#{ie-hex-str(${{{.}}})}";
@@ -31,8 +36,25 @@
     margin: 5px;
   }
 }
-
 {{/wvu_variables.colors}}
+
+{{#wvu_variables.colors}}
+.color__swatch-{{.}} {
+  @include font-color-check(${{{.}}});
+  background: ${{.}};
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+{{/wvu_variables.colors}}
+
+.color__name {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  margin: 5px;
+}
 
 .images {
   @include outer-container();
@@ -47,16 +69,21 @@
   margin-bottom: 5px;
 }
 
-.dark-background {
-  background-color:$wvu-black;
-  background-image: linear-gradient(rgba($wvu-white,0.1) 2px, transparent 2px),
-  linear-gradient(90deg, rgba($wvu-white,0.1) 2px, transparent 2px),
-  linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size:50px 50px, 50px 50px, 10px 10px, 10px 10px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+{{#wvu_variables.images}}
+.{{name}} {
+  {{#darkBackground}}background: $wvu-black;{{/darkBackground}}
+  background-image: url(${{name}}){{#darkBackground}}, linear-gradient(rgba($wvu-white,0.1) 2px, transparent 2px), linear-gradient(90deg, rgba($wvu-white,0.1) 2px, transparent 2px), linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px){{/darkBackground}};
+  background-size: {{width}}px {{height}}px{{#darkBackground}}, 50px 50px, 50px 50px, 10px 10px, 10px 10px{{/darkBackground}};
+  background-position: top right{{#darkBackground}}, -2px -2px, -2px -2px, -1px -1px, -1px -1px{{/darkBackground}};
 
   .image__name {
     color: $wvu-white;
   }
+  height: {{height}}px;
+  width: {{width}}px;
+}
+{{/wvu_variables.images}}
+
+.dark-background {
+
 }

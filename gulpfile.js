@@ -55,6 +55,9 @@ gulp.task('compile-scss', ['scss-lint'], function(){
 gulp.task('build', ['compile-scss'], function () {
 
   var templateData = JSON.parse(fs.readFileSync('./data/_wvu-variables.json'));
+  templateData.wvu_variables.colors_dup = templateData.wvu_variables.colors;
+
+  //console.log(templateData);
 
   var options = {};
 
