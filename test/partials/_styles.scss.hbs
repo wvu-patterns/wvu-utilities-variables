@@ -1,0 +1,56 @@
+@mixin font-color-check($background-color) {
+  @if lightness($background-color) > 50 {
+    color: $wvu-black;
+  } @else {
+    color: $wvu-white;
+  }
+}
+
+.colors {
+  @include outer-container();
+}
+
+.color {
+  position: relative;
+}
+
+{{#wvu_variables.colors}}
+.{{.}} {
+  @include font-color-check(${{{.}}});
+  @include span-columns(3);
+  @include omega(4n);
+  background: ${{.}};
+  padding: 20px;
+
+  &:after {
+    content: "#{ie-hex-str(${{{.}}})}";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 11px;
+    margin: 5px;
+  }
+}
+
+{{/wvu_variables.colors}}
+
+.images {
+  @include outer-container();
+}
+
+.image {
+  padding: 15px;
+  margin-bottom: 5px;
+}
+
+.image__name {
+  margin-bottom: 5px;
+}
+
+.dark-background {
+  background-color: $wvu-black;
+
+  .image__name {
+    color: $wvu-white;
+  }
+}

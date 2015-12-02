@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WVU Pattern Library - Utility Variables</title>
+    <title>WVU Pattern Library - Utility Buttons</title>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
 
+    <link href="css/styles.css" rel="stylesheet" />
     <style>
-      /* Test ONLY Styles */
-      * {  box-sizing: border-box; }
-      html, body { padding: 0; margin: 0; }
+      body {
+        padding: 20px;
+      }
+
     </style>
   </head>
-
   <body>
+    <h1> WVU Variable Tests </h1>
 
+    <h2> Color Tests </h2>
+    <div class="colors">
+    {{#wvu_variables.colors}}
+      <div class="color {{.}}">${{.}}</div>
+    {{/wvu_variables.colors}}
+    </div>
+
+    <h2> Image Tests </h2>
+    <div class="images">
+    {{#wvu_variables.images}}
+      <div class="image {{#darkBackground}}dark-background{{/darkBackground}}">
+        <div class="image__name">
+          {{name}}
+        </div>
+        <img src="{{url}}" />
+      </div>
+    {{/wvu_variables.images}}
+    </div>
   </body>
 </html>

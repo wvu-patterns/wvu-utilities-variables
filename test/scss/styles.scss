@@ -1,0 +1,26 @@
+// Default Variable Overrides
+// =================================================
+
+
+// 3rd Party Dependencies
+// =================================================
+
+// Normalize
+@import './bower_components/normalize-scss/normalize.scss';
+
+// Bourbon & Neat
+@import './bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import './bower_components/neat/app/assets/stylesheets/neat';
+
+
+// WVU Utility Variables
+// =================================================
+
+@import './src/scss/wvu-variables-color';
+@import './src/scss/wvu-variables-base';
+@import './src/scss/wvu-variables-images';
+@import './src/scss/wvu-variables-mediaquery';
+@import './src/scss/wvu-variables-overrides';
+
+
+@import 'generated-styles';

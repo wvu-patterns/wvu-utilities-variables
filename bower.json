@@ -26,5 +26,8 @@
   ],
   "dependencies": {
     "neat" : "1.7.2"
+  },
+  "devDependencies": {
+    "normalize-scss": "~3.0.3"
   }
 }

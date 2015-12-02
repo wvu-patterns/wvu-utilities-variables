@@ -156,3 +156,6 @@ config.codekit
 
 ### Exclude the build folder
 build
+
+### Exclude the dyanically generated scss stylesheet
+/test/scss/_generated-styles.scss

@@ -1,0 +1,181 @@
+{
+  "wvu_config": { },
+  "wvu_variables": {
+    "colors": [
+      "wvu-gold",
+      "wvu-blue",
+      "wvu-black",
+      "wvu-white",
+      "pms-432-c",
+      "pms-warm-gray-11",
+      "pms-warm-gray-7",
+      "pms-warm-gray-3",
+      "pms-286-c",
+      "pms-300-c",
+      "pms-629-c",
+      "pms-7554-c",
+      "pms-7557-c",
+      "pms-144-c",
+      "pms-7476-c",
+      "pms-5625-c",
+      "pms-558-c",
+      "pms-180-c",
+      "pms-166-c",
+      "wvu-light-grey",
+      "wvu-lighter-grey",
+      "wvu-lightest-grey",
+      "wvu-base-font-color",
+      "wvu-base-accent-color",
+      "wvu-base-link-color",
+      "wvu-base-link-hover-color",
+      "wvu-base-link-visited-color"
+    ],
+    "images" : [
+      {
+        "name": "flying-wv",
+        "url": "https://patterns.wvu.edu/images/flying-wv.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "flying-wv-blue",
+        "url": "https://patterns.wvu.edu/images/flying-wv-blue.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "flying-wv-w-signature",
+        "url": "https://patterns.wvu.edu/images/flying-wv-w-signature.png",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      },
+      {
+        "name": "flying-wv-w-signature-gold-bg",
+        "url": "https://patterns.wvu.edu/images/flying-wv-w-signature-gold-bg.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "flying-wv-w-signature-white-bg",
+        "url": "https://patterns.wvu.edu/images/flying-wv-w-signature-white-bg.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "flying-wv-w-signature--tech",
+        "url": "https://patterns.wvu.edu/images/flying-wv-w-signature--tech.png",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      },
+      {
+        "name": "flying-wv-w-signature-gold--tech",
+        "url": "https://patterns.wvu.edu/images/flying-wv-w-signature-gold-bg--tech.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "flying-wv-w-signature-white--tech",
+        "url": "https://patterns.wvu.edu/images/flying-wv-w-signature-white-bg--tech.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-pattern-blue-bg",
+        "url": "https://patterns.wvu.edu/images/pattern-blue.jpg",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-pattern-gold-bg",
+        "url": "https://patterns.wvu.edu/images/pattern-gold.jpg",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-gold",
+        "url": "https://patterns.wvu.edu/images/diagonal-gold.svg",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-blue",
+        "url": "https://patterns.wvu.edu/images/diagonal-blue.svg",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-white",
+        "url": "https://patterns.wvu.edu/images/diagonal-white.svg",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      },
+      {
+        "name": "wvu-diagonal-line-gold-transparent",
+        "url": "https://patterns.wvu.edu/images/diagonal-gold-transparent.svg",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-blue-transparent",
+        "url": "https://patterns.wvu.edu/images/diagonal-blue-transparent.svg",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-white-transparent",
+        "url": "https://patterns.wvu.edu/images/diagonal-white-transparent.svg",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      },
+      {
+        "name": "wvu-diagonal-line-gold-fallback",
+        "url": "https://patterns.wvu.edu/images/diagonal-gold.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-blue-fallback",
+        "url": "https://patterns.wvu.edu/images/diagonal-blue.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-white-fallback",
+        "url": "https://patterns.wvu.edu/images/diagonal-white.png",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      },
+      {
+        "name": "wvu-diagonal-line-gold-transparent-fallback",
+        "url": "https://patterns.wvu.edu/images/diagonal-gold-transparent.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-blue-transparent-fallback",
+        "url": "https://patterns.wvu.edu/images/diagonal-blue-transparent.png",
+        "height": 200,
+        "width": 200
+      },
+      {
+        "name": "wvu-diagonal-line-white-transparent-fallback",
+        "url": "https://patterns.wvu.edu/images/diagonal-white-transparent.png",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      },
+      {
+        "name": "wvu-search-icon",
+        "url": "https://patterns.wvu.edu/images/search-icon.png",
+        "height": 200,
+        "width": 200,
+        "darkBackground": true
+      }
+    ]
+  }
+}

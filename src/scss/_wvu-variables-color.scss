@@ -53,9 +53,9 @@ $wvu-accent-yellow: $pms-115-c;
 
 // Generic Grey Tones
 //==================================================
-$wvu-light-grey: #cccccc;
-$wvu-lighter-grey: #dddddd;
-$wvu-lightest-grey: #eeeeee;
+$wvu-light-grey: #CCCCCC;
+$wvu-lighter-grey: #DDDDDD;
+$wvu-lightest-grey: #EEEEEE;
 
 
 // Font Color Defaults
@@ -79,4 +79,4 @@ $wvu-base-border-color: $wvu-light-grey !default;
 // Shadow Color Default
 //==================================================
 
-$wvu-base-shadow-color: rgba($wvu-black,0.06)
+$wvu-base-shadow-color: rgba($wvu-black, 0.06);
