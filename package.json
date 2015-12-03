@@ -37,6 +37,7 @@
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
+    "gulp-a11y": "https://github.com/zeroedin/gulp-a11y.git#22e768c",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-compile-handlebars": "^0.5.0",
     "gulp-rename": "^1.2.2",

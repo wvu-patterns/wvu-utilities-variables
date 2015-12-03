@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     handlebars = require('gulp-compile-handlebars'),
+    a11y = require('gulp-a11y'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -73,6 +74,14 @@ gulp.task('scss-lint', ['build-test-styles'], function(){
       'config': '.scss-lint.yml'
     }))
     .pipe(scsslint.failReporter());
+});
+
+gulp.task('audit', function () {
+  return gulp.src('./build/**/*.html')
+    .pipe(a11y({
+      verbose: true
+    }))
+    .pipe(a11y.reporter());
 });
 
 gulp.task('ci',['build']);
