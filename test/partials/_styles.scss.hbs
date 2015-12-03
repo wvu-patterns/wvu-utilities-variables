@@ -21,8 +21,8 @@
 {{#wvu_variables.colors}}
 .{{.}} {
   @include font-color-check(${{{.}}});
-  @include span-columns(4);
-  @include omega(3n);
+  @include span-columns(6);
+  @include omega(2n);
   background: ${{.}};
   padding: 20px;
   margin-bottom: $gutter;
@@ -41,7 +41,7 @@
 .color__swatches {
   @include clearfix();
   float: left;
-  width: 40%;
+  width: 30%;
   padding-bottom: 15px;
 }
 
@@ -50,8 +50,8 @@
   @include font-color-check(${{{.}}});
   background: ${{.}};
   float: left;
-  height: 15px;
-  width: 15px;
+  height: 30px;
+  width: 30px;
   margin: 3px;
 }
 {{/wvu_variables.colors}}
@@ -60,7 +60,7 @@
   columns: 80px 2;
   column-gap: 1em;
   float: right;
-  font-size: 12px;
+  font-size: 20px;
   padding-bottom: 15px;
   width: 60%;
 
