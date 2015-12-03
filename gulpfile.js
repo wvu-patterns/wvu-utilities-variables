@@ -77,17 +77,19 @@ gulp.task('scss-lint', ['build-test-styles'], function(){
     .pipe(scsslint.failReporter());
 });
 
-gulp.task('audit', function() {
+gulp.task('accessibilty-audit', ['build'], function(cb) {
   return gulp.src('./build/**/*.html')
     .pipe(a11y({
       verbose: true,
       export: './build/report.json'
-    }));
+    }))
+    .pipe(a11y.reporter())
+    .pipe(gulp.dest('./build/'))
 });
 
-gulp.task('non-accessible-colors', ['audit'], function(){
+gulp.task('color-check', ['accessibilty-audit'], function(){
 
-  var reportData = JSON.parse(fs.readFileSync('./build/report.json'));
+  var reportData = JSON.parse(fs.readFileSync('./build/report.json','utf8'));
 
   var elements_string = reportData['audit'].filter(function(item){
     return item['code'] == 'AX_COLOR_01'
@@ -101,8 +103,12 @@ gulp.task('non-accessible-colors', ['audit'], function(){
     .pipe(cheerio(function ($, file) {
     // Each file will be run through cheerio and each corresponding `$` will be passed here.
     // `file` is the gulp file object
+    // Make all h1 tags uppercase
       $(elements_array).each(function () {
+        // var h1 = $(this);
+        // h1.text(h1.text().toUpperCase());
         var el = $(this);
+
         el.addClass('accessibility-failure');
       });
     }))
@@ -113,7 +119,7 @@ gulp.task('non-accessible-colors', ['audit'], function(){
 gulp.task('ci',['build']);
 
 gulp.task('default',['build','browser-sync'], function(){
-  gulp.watch(["./src/*.scss","./test/scss/*.scss"],["build"]);
+  gulp.watch(["./src/**/*.scss","./test/scss/*.scss"],["build"]);
   gulp.watch(["./test/**/*.hbs","./data/*.json"],["build"]);
   gulp.watch("./build/**/*.html").on('change',reload);
   gulp.watch("./build/css/*.css").on('change',reload);
