@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     handlebars = require('gulp-compile-handlebars'),
     a11y = require('gulp-a11y'),
+    cheerio = require('gulp-cheerio'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -76,12 +77,37 @@ gulp.task('scss-lint', ['build-test-styles'], function(){
     .pipe(scsslint.failReporter());
 });
 
-gulp.task('audit', function () {
+gulp.task('audit', function() {
   return gulp.src('./build/**/*.html')
     .pipe(a11y({
-      verbose: true
+      verbose: true,
+      export: './build/report.json'
+    }));
+});
+
+gulp.task('non-accessible-colors', ['audit'], function(){
+
+  var reportData = JSON.parse(fs.readFileSync('./build/report.json'));
+
+  var elements_string = reportData['audit'].filter(function(item){
+    return item['code'] == 'AX_COLOR_01'
+  });
+
+  var elements_array = elements_string[0]['elements'].split('\n');
+  elements_array.shift();
+
+
+  return gulp.src(['./build/**/*.html'])
+    .pipe(cheerio(function ($, file) {
+    // Each file will be run through cheerio and each corresponding `$` will be passed here.
+    // `file` is the gulp file object
+      $(elements_array).each(function () {
+        var el = $(this);
+        el.addClass('accessibility-failure');
+      });
     }))
-    .pipe(a11y.reporter());
+    .pipe(gulp.dest('./build/'));
+
 });
 
 gulp.task('ci',['build']);
