@@ -30,7 +30,7 @@ html {
   color: font-color-check(${{{.}}});
   @include span-columns(12);
   background: ${{.}};
-  padding: 20px;
+  padding: $gutter;
   margin-bottom: $gutter;
 
   &:after {
@@ -38,8 +38,8 @@ html {
     position: absolute;
     bottom: 0;
     right: 0;
-    font-size: 11px;
-    margin: 5px;
+    font-size: 24px;
+    margin: 15px;
   }
 }
 {{/wvu_variables.colors}}
@@ -70,7 +70,6 @@ html {
   columns: 1;
   column-gap: 3em;
   counter-reset: colnum;
-  orphans: 2;
 
   @include media(480px) {
     columns: 2;
@@ -84,13 +83,6 @@ html {
     columns: 4;
   }
 
-  @include media(1200px) {
-    columns: 5;
-  }
-
-  @include media(1400px) {
-    columns: 6;
-  }
 
   .color__text--large {
     font-size: 24px;
@@ -111,9 +103,7 @@ html {
     content: counter(colnum)". ";
   	float:left;
     visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
+
   }
 }
 
@@ -124,10 +114,11 @@ html {
 {{/wvu_variables.colors}}
 
 .color__name {
+  font-size: 24px;
   bottom: 0;
   left: 0;
   position: absolute;
-  margin: 5px;
+  margin: 15px;
 }
 
 .grey_tones {

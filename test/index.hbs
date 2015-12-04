@@ -15,6 +15,7 @@
       <div class="colors">
       {{#wvu_variables.colors}}
         <div class="color {{.}}">
+          <div class="color__name">{{.}}</div>
           <div class="color__swatches">
           {{#../wvu_variables.colors_dup}}
             <div class="color__swatch-{{.}}"></div>
@@ -28,7 +29,6 @@
             </li>
             {{/../wvu_variables.colors_dup}}
           </ol>
-          <div class="color__name">${{.}}</div>
         </div>
       {{/wvu_variables.colors}}
       </div>
