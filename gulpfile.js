@@ -104,11 +104,18 @@ gulp.task('color-check', ['accessibilty-audit'], function(){
     // `file` is the gulp file object
     // Make all h1 tags uppercase
       $(elements_array).each(function () {
-        // var h1 = $(this);
-        // h1.text(h1.text().toUpperCase());
-        var el = $(this);
+        // Ignore color__name
+        if (!$(this).hasClass('color__name')){
+          var el = $(this);
 
-        el.addClass('accessibility-failure');
+          var text = el.clone().text();
+          var strike = $('<strike>'+text+'</strike>');
+          el.empty();
+          el.append(strike);
+
+          el.addClass('accessibility-failure');
+        }
+
       });
     }))
     .pipe(gulp.dest('./build/'));

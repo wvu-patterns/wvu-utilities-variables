@@ -180,3 +180,21 @@ html {
 .dark-background {
 
 }
+
+s, strike {
+    text-decoration: none;    /*we're replacing the default line-through*/
+    position: relative;
+    display: inline-block; /* don't wrap to multiple lines */
+}
+s:after, strike:after {
+    content:"";    /* required property */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid red;
+    height: 50%;    /* adjust as necessary, depending on line thickness */
+    /* or use calc() if you don't need to support IE8: */
+    height: calc(50% - 1px); /* 1px = half the line thickness */
+    width: 100%;
+    /* transform: rotateZ(-4deg); */
+}
