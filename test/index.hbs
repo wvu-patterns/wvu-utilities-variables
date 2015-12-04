@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>WVU Pattern Library - Utility Buttons</title>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
 
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-      body {
-        padding: 20px;
-      }
 
-    </style>
   </head>
   <body>
     <div class="container">
@@ -25,11 +20,14 @@
             <div class="color__swatch-{{.}}"></div>
           {{/../wvu_variables.colors_dup}}
           </div>
-          <div class="color__text">
-          {{#../wvu_variables.colors_dup}}
-            <p class="color__text-{{.}}">{{.}}</p>
-          {{/../wvu_variables.colors_dup}}
-          </div>
+          <ol class="color__text">
+            {{#../wvu_variables.colors_dup}}
+            <li>
+              <p class="color__text--large color__text-{{.}}">{{.}}</p>
+              <p class="color__text--small color__text-{{.}}">{{.}}</p>
+            </li>
+            {{/../wvu_variables.colors_dup}}
+          </ol>
           <div class="color__name">${{.}}</div>
         </div>
       {{/wvu_variables.colors}}

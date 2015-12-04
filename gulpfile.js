@@ -98,7 +98,6 @@ gulp.task('color-check', ['accessibilty-audit'], function(){
   var elements_array = elements_string[0]['elements'].split('\n');
   elements_array.shift();
 
-
   return gulp.src(['./build/**/*.html'])
     .pipe(cheerio(function ($, file) {
     // Each file will be run through cheerio and each corresponding `$` will be passed here.
