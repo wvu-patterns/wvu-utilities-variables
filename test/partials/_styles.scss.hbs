@@ -1,30 +1,3 @@
-$max-width: 100%;
-
-@function font-color-check($background-color) {
-  @if lightness($background-color) > 50 {
-    @return $wvu-black
-  } @else {
-    @return $wvu-white
-  }
-}
-
-html {
-  font-size: 16px;
-}
-
-.container {
-  @include outer-container();
-  padding: 20px;
-}
-
-.colors {
-  @include outer-container();
-}
-
-.color {
-  position: relative;
-}
-
 {{#wvu_variables.colors}}
 .{{.}} {
   color: font-color-check(${{{.}}});
@@ -44,68 +17,14 @@ html {
 }
 {{/wvu_variables.colors}}
 
-.color__swatches {
-  @include clearfix();
-  padding-bottom: 15px;
-}
-
-%color_swatch {
-  float: left;
-  height: 30px;
-  width: 30px;
-  margin: 3px;
-
-}
-
 {{#wvu_variables.colors}}
 .color__swatch-{{.}} {
-  @extend %color_swatch;
+  @extend %color-swatch;
   color: font-color-check(${{{.}}});
   background: ${{.}};
 }
 {{/wvu_variables.colors}}
 
-.color__text {
-  clear: both;
-  columns: 1;
-  column-gap: 3em;
-  counter-reset: colnum;
-
-  @include media(480px) {
-    columns: 2;
-  }
-
-  @include media(768px) {
-    columns: 3;
-  }
-
-  @include media(1080px) {
-    columns: 4;
-  }
-
-
-  .color__text--large {
-    font-size: 24px;
-    padding-bottom: 0;
-    margin: 0;
-  }
-
-  .accessibility-failure {
-    text-decoration: line-through;
-  }
-
-  li {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  li:before {
-    content: counter(colnum)". ";
-  	float:left;
-    visibility: hidden;
-
-  }
-}
 
 {{#wvu_variables.colors}}
 .color__text-{{.}} {
@@ -113,21 +32,6 @@ html {
 }
 {{/wvu_variables.colors}}
 
-.color__name {
-  font-size: 24px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  margin: 15px;
-}
-
-.grey_tones {
-  @include outer-container();
-}
-
-.grey_tone {
-  position: relative;
-}
 
 {{#wvu_variables.grey_tones}}
 .{{.}} {
@@ -149,18 +53,6 @@ html {
 }
 {{/wvu_variables.grey_tones}}
 
-.images {
-  @include outer-container();
-}
-
-.image {
-  padding: 15px;
-  margin-bottom: 5px;
-}
-
-.image__name {
-  margin-bottom: 5px;
-}
 
 {{#wvu_variables.images}}
 .{{name}} {
@@ -176,25 +68,3 @@ html {
   width: {{width}}px;
 }
 {{/wvu_variables.images}}
-
-.dark-background {
-
-}
-
-s, strike {
-    text-decoration: none;    /*we're replacing the default line-through*/
-    position: relative;
-    display: inline-block; /* don't wrap to multiple lines */
-}
-s:after, strike:after {
-    content:"";    /* required property */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-top: 1px solid red;
-    height: 50%;    /* adjust as necessary, depending on line thickness */
-    /* or use calc() if you don't need to support IE8: */
-    height: calc(50% - 1px); /* 1px = half the line thickness */
-    width: 100%;
-    /* transform: rotateZ(-4deg); */
-}

@@ -9,4 +9,137 @@
 
 // Include Test Styles
 // =================================================
+
+$strike-color: #FF0000;
+
+$max-width: 100%;
+
+@function font-color-check($background-color) {
+  @if lightness($background-color) > 50 {
+    @return $wvu-black
+  } @else {
+    @return $wvu-white
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+.container {
+  @include outer-container();
+  padding: 20px;
+}
+
+.colors {
+  @include outer-container();
+}
+
+.color {
+  position: relative;
+}
+
+.color__swatches {
+  @include clearfix();
+  padding-bottom: 15px;
+}
+
+%color-swatch {
+  float: left;
+  height: 30px;
+  margin: 3px;
+  width: 30px;
+}
+
+.color__text {
+  clear: both;
+  column-gap: 3em;
+  columns: 1;
+  counter-reset: colnum;
+
+  @include media(480px) {
+    columns: 2;
+  }
+
+  @include media(768px) {
+    columns: 3;
+  }
+
+  @include media(1080px) {
+    columns: 4;
+  }
+
+
+  .color__text--large {
+    font-size: 24px;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .accessibility-failure {
+    text-decoration: line-through;
+  }
+
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  li:before {
+    content: counter(colnum)'. ';
+    float: left;
+    visibility: hidden;
+  }
+}
+
+.color__name {
+  bottom: 0;
+  font-size: 24px;
+  left: 0;
+  margin: 15px;
+  position: absolute;
+}
+
+.grey-tones {
+  @include outer-container();
+}
+
+.grey-tone {
+  position: relative;
+}
+
+.images {
+  @include outer-container();
+}
+
+.image {
+  margin-bottom: 5px;
+  padding: 15px;
+}
+
+.image__name {
+  margin-bottom: 5px;
+}
+
+s,
+strike {
+  display: inline-block; // don't wrap to multiple lines
+  position: relative;
+  text-decoration: none;  // we're replacing the default line-through
+}
+
+s:after,
+strike:after {
+  border-top: 1px solid $strike-color;
+  bottom: 0;
+  content: '';    // required property
+  height: 50%;  // adjust as necessary, depending on line thickness
+  // or use calc() if you don't need to support IE8:
+  height: calc(50% - 1px); // 1px = half the line thickness
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+
 @import 'generated-styles';
