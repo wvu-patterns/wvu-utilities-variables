@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     fs = require('fs'),
+    del = require('del'),
     sass = require('gulp-sass'),
     scsslint = require('gulp-scss-lint'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -10,6 +11,7 @@ var gulp = require('gulp'),
     handlebars = require('gulp-compile-handlebars'),
     a11y = require('gulp-a11y'),
     cheerio = require('gulp-cheerio'),
+    todo = require('gulp-todo'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -25,8 +27,26 @@ gulp.task('browser-sync', function() {
   });
 });
 
+gulp.task('todo', function(){
+  return gulp.src([
+    './**/*.scss',
+    '!./bower_components/**/*.scss',
+    './**/*.html',
+    '!./bower_components/**/*.html',
+    './**/*.hbs',
+    '!./bower_components/**/*.hbs',
+    './**/*.haml',
+    '!./bower_components/**/*.haml'
+  ])
+  .pipe(todo())
+  .pipe(gulp.dest('./'));
+});
+
 gulp.task('build-test-styles', function(){
+
   var templateData = JSON.parse(fs.readFileSync('./data/_wvu-variables.json'));
+  // include variable colors
+  templateData.wvu_variables.colors_dup = templateData.wvu_variables.colors;
 
   var options = {};
 
@@ -37,6 +57,9 @@ gulp.task('build-test-styles', function(){
 });
 
 gulp.task('compile-scss', ['scss-lint'], function(){
+
+  del.sync(['build']);
+
   return gulp.src([
       './test/scss/_generated-styles.scss',
       './test/scss/styles.scss'
@@ -54,12 +77,11 @@ gulp.task('compile-scss', ['scss-lint'], function(){
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('build', ['compile-scss'], function () {
+gulp.task('build', ['todo','compile-scss'], function () {
 
   var templateData = JSON.parse(fs.readFileSync('./data/_wvu-variables.json'));
+  // include variable colors
   templateData.wvu_variables.colors_dup = templateData.wvu_variables.colors;
-
-  //console.log(templateData);
 
   var options = {};
 
@@ -72,9 +94,10 @@ gulp.task('build', ['compile-scss'], function () {
 gulp.task('scss-lint', ['build-test-styles'], function(){
   return gulp.src('./src/scss/*.scss')
     .pipe(scsslint({
-      'config': '.scss-lint.yml'
+      'bundleExec': true,
+      'config': './.scss-lint.yml'
     }))
-    .pipe(scsslint.failReporter());
+    .pipe(scsslint.failReporter('E'));
 });
 
 gulp.task('accessibilty-audit', ['build'], function(cb) {

@@ -1,0 +1,20 @@
+// 3rd Party Dependencies
+// =================================================
+
+// Normalize
+// TODO: Figure out how we want to handle this format of SCSS, Linter throws warning
+@import './bower_components/normalize-scss/normalize.scss';
+
+// Bourbon & Neat
+@import './bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import './bower_components/neat/app/assets/stylesheets/neat';
+
+
+// WVU Utility Variables
+// =================================================
+
+@import './src/scss/wvu-variables-color';
+@import './src/scss/wvu-variables-base';
+@import './src/scss/wvu-variables-images';
+@import './src/scss/wvu-variables-mediaquery';
+@import './src/scss/wvu-variables-overrides';

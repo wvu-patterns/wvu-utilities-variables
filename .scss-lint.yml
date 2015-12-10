@@ -82,9 +82,11 @@ linters:
     enabled: false
 
   ImportPath:
+    severity: warning
     enabled: true
     leading_underscore: false
     filename_extension: false
+
 
   Indentation:
     enabled: true
