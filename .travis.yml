@@ -1,19 +1,18 @@
 language: node_js
-node_js:
-  - "4.1"
-  - "4.0"
-  - "0.12"
-matrix:
- allow_failures:
-   - node_js: "0.12"
+node_js: stable
 before_install:
 - gem install bundler
-- bundle install
 - npm install -g bower
 - npm install -g gulp
+install:
+- bundle install
+- npm install
 - bower install
 script:
 - gulp ci
 notifications:
   slack:
-    secure: NAHoKkUk7mQfF31FWog+u5b8IG9LsSd2/tdjerr7o1PXhl9E8C2gapCqDDpxbqzUKKwiyOz4RoqPHuzhJtJMHFue5LoylbAYSJipXjyQ59mLFCtvJrhJcDpqCv/YxxRVA6YpfvWYVr3rW7RX+aTj8gRQGrrjIhIfqQU2aD4jjhM=
+    rooms:
+      - secure: NAHoKkUk7mQfF31FWog+u5b8IG9LsSd2/tdjerr7o1PXhl9E8C2gapCqDDpxbqzUKKwiyOz4RoqPHuzhJtJMHFue5LoylbAYSJipXjyQ59mLFCtvJrhJcDpqCv/YxxRVA6YpfvWYVr3rW7RX+aTj8gRQGrrjIhIfqQU2aD4jjhM=
+    on_success: always
+    on_failure: always
