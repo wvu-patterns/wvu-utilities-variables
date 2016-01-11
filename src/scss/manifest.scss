@@ -2,8 +2,7 @@
 // =================================================
 
 // Normalize
-// TODO: Figure out how we want to handle this format of SCSS, Linter throws warning
-@import './bower_components/normalize-scss/normalize.scss';
+@import './bower_components/normalize.scss/fork-versions/default/normalize';
 
 // Bourbon & Neat
 @import './bower_components/bourbon/app/assets/stylesheets/bourbon';

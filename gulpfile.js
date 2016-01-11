@@ -66,7 +66,7 @@ gulp.task('compile-scss', ['scss-lint'], function(){
     ])
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: ['scss'],
+      includePaths: ['scss','./bower_components/support-for/sass'],
       outputStyle: 'expanded'
     }))
     .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7", { cascade: true }))
