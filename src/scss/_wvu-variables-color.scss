@@ -53,9 +53,16 @@ $wvu-accent-yellow: $pms-115-c;
 
 // Generic Grey Tones
 //==================================================
+
+// TODO: Come to a consensus on if these are the grey tones we should be using.
+// TODO: Identify all the areas in which these grey variations are being used.
 $wvu-light-grey: #CCCCCC;
 $wvu-lighter-grey: #DDDDDD;
 $wvu-lightest-grey: #EEEEEE;
+
+$wvu-dark-grey: #555555;
+$wvu-darker-grey: #444444;
+$wvu-darkest-grey: #333333;
 
 
 // Font Color Defaults
